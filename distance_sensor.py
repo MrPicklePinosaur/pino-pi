@@ -16,12 +16,14 @@ GPIO.output(TRIGPIN, False)
 
 while GPIO.input(ECHOPIN) == False:
 	start = time.time()
+	print('start: '+str(start))
 
 while GPIO.input(ECHOPIN) == True:
 	end = time.time()
+	print('end: '+str(end))
 
 delta_time = end-start
 
 distance = delta_time/0.000058 #given the speed of sound, we know how long it took sound wave to reach target and back, so we can calculate distance to target
 
-print('Distance:' + str(distance) + ' cm')
+print('Distance: ' + str(distance) + ' cm')
