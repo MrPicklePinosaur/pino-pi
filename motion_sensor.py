@@ -1,16 +1,25 @@
-from gpiozero import LED
-from gpiozero import MotionSensor
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
 
 PIRPIN = 4
 LEDPIN = 17
 
-pir = MotionSensor(PIRPIN)
-led = LED(LEDPIN)
+GPIO.setup(LEDPIN,GPIO.OUT)
+GPIO.setup(PIRPIN,GPIO.IN)
 
-led.off()
+try:
+	while True:
+		time.sleep(0.1)
 
-while True:
-	pir.wait_for_motion()
-	led.on()
-	pir.wait_for_no_motion()
-	led.off()
+		state = GPIO.input(pir_sensor)
+		if state == 1: #if motion is detected
+			GPIO.output(LEDPIN,True)
+		else:
+			GPIO.output(LEDPIN,False)
+
+except KeyboardInterrupt:
+	pass
+finally:
+	GPIO.cleanup()
