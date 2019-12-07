@@ -13,7 +13,7 @@ try:
 	while True:
 		time.sleep(0.1)
 
-		state = GPIO.input(pir_sensor)
+		state = GPIO.input(PIRPIN)
 		if state == 1: #if motion is detected
 			GPIO.output(LEDPIN,True)
 		else:
