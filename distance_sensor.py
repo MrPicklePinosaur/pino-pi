@@ -12,15 +12,17 @@ GPIO.setup(TRIGPIN,GPIO.OUT)
 GPIO.setup(ECHOPIN,GPIO.IN)
 GPIO.setup(DHTPIN,GPIO.IN)
 
+#Get temp
 DHT_SENSOR = DHT.DHT11
 hum, temp = DHT.read(DHT_SENSOR,DHTPIN)
-if hum is not None and temp is not None:
-	print("Temp: "+str(temp)+" C Hum:"+str(hum))
-else:
-	print("Sensor error")
+if hum is None or temp is None:
+	print("DHT sensor error")
+	exit()
 
+print("Temp: "+str(temp)+" C Hum:"+str(hum))
+
+#Ultrasonic
 #send a quick ultrasonic burst
-'''
 GPIO.output(TRIGPIN, True)
 time.sleep(0.0001)
 GPIO.output(TRIGPIN, False)
@@ -33,8 +35,9 @@ while GPIO.input(ECHOPIN) == True:
 
 delta_time = end-start
 
-distance = delta_time/0.000058 #given the speed of sound, we know how long it took sound wave to reach target and back, so we can calculate distance to target
+#given the speed of sound, we know how long it took sound wave to reach target and back, so we can calculate distance to target
+distance = (331 + 0.6*temp)*(delta_time)/100 # in cm
 
 print('Distance: ' + str(distance) + ' cm')
-'''
+
 GPIO.cleanup()
