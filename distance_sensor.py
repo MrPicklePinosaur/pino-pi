@@ -1,3 +1,5 @@
+#Use temp/humidity sensor and ultrasonic sensor to measure distance (speed of sound is dependent on temp)
+
 import RPi.GPIO as GPIO
 import Adafruit_DHT as DHT
 import time
