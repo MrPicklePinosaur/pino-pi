@@ -25,3 +25,4 @@ delta_time = end-start
 distance = delta_time/0.000058 #given the speed of sound, we know how long it took sound wave to reach target and back, so we can calculate distance to target
 
 print('Distance: ' + str(distance) + ' cm')
+GPIO.cleanup()
