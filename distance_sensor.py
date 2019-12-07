@@ -16,7 +16,7 @@ DHT_SENSOR = DHT.DHT11
 hum, temp = DHT.read(DHT_SENSOR,DHTPIN)
 if hum is not None and temp is not None:
 	print("Temp: "+str(temp)+" C Hum:"+str(hum))
-else
+else:
 	print("Sensor error")
 
 #send a quick ultrasonic burst
