@@ -9,7 +9,7 @@ led = LED(LEDPIN)
 
 led.off()
 
-while true:
+while True:
 	pir.wait_for_motion()
 	led.on()
 	pir.wait_for_no_motion()
