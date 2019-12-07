@@ -16,11 +16,9 @@ GPIO.output(TRIGPIN, False)
 
 while GPIO.input(ECHOPIN) == False:
 	start = time.time()
-	print('start: '+str(start))
 
 while GPIO.input(ECHOPIN) == True:
 	end = time.time()
-	print('end: '+str(end))
 
 delta_time = end-start
 
