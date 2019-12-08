@@ -18,9 +18,9 @@ try:
 		if (len(request) != 3):
 			continue
 
-		GPIO.output(REDPIN,request[0])
-		GPIO.output(GREENPIN,request[1])
-		GPIO.output(BLUEPIN,request[2])
+		GPIO.output(REDPIN,int(request[0]))
+		GPIO.output(GREENPIN,int(request[1]))
+		GPIO.output(BLUEPIN,int(request[2]))
 
 
 except KeyboardInterrupt:
