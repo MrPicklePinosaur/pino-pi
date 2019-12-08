@@ -13,8 +13,8 @@ GPIO.setup(BLUEPIN,GPIO.OUT)
 
 try:
 	while True:
-		request = input()
-		print(request)
+		request = str(input())
+
 		if (len(request) != 3):
 			continue
 
