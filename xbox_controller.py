@@ -13,13 +13,7 @@ for i in range(pygame.joystick.get_count()):
 
 try:
 	while True:
-		'''
-		for evt in pygame.event.get():
-			
-			if evt.type == pygame.JOYAXISMOTION:
-                            print("YEEET")
-        '''
-
+		
         for j in joysticks:
 
         	print(j.get_numaxes())
