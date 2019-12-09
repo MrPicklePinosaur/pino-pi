@@ -2,8 +2,8 @@ import pygame
 pygame.init()
 
 joysticks = []
-print(pygame.joysticks.get_count())
-for i in range(pygame.joysticks.get_count()):
+print(pygame.joystick.get_count())
+for i in range(pygame.joystick.get_count()):
 	joysticks.append(pygame.joystick.Joystick(i))
 	joysticks[-1].init()
 
