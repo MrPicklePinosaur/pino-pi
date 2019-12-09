@@ -1,5 +1,6 @@
 import pygame
 pygame.init()
+pygame.display.init()
 pygame.joystick.init()
 
 joysticks = []
