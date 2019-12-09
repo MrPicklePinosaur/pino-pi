@@ -9,12 +9,14 @@ for i in range(pygame.joystick.get_count()):
 
 	print("Initializing joystick "+joysticks[-1].get_name())
 
-'''
+
 try:
 	while True:
+		for evt in pygame.event.get():
 
+			if evt.button == 0:
+				print("PRESS")
 
 
 except KeyboardInterrupt:
 	pass
-'''
