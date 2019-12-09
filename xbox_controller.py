@@ -13,7 +13,7 @@ for i in range(pygame.joystick.get_count()):
 
 try:
 	while True:
-		
+
         for j in joysticks:
 
         	print(j.get_numaxes())
