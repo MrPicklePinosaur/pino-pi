@@ -1,5 +1,6 @@
 import pygame
 pygame.init()
+pygame.joystick.init()
 
 joysticks = []
 print(pygame.joystick.get_count())
@@ -13,10 +14,10 @@ for i in range(pygame.joystick.get_count()):
 try:
 	while True:
 		for evt in pygame.event.get():
-
-			if evt.button == 0:
-				print("PRESS")
+			pass
 
 
 except KeyboardInterrupt:
 	pass
+finally:
+	pygame.quit()
