@@ -21,7 +21,7 @@ try:
         '''
 
         for j in joysticks:
-
+        	
         	print(j.get_numaxes())
         	for axis in range(j.get_numaxes()):
         		print("Axis #"+axis+": "+j.get_axis(axis)) 
