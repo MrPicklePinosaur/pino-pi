@@ -15,7 +15,10 @@ for i in range(pygame.joystick.get_count()):
 try:
 	while True:
 		for evt in pygame.event.get():
-			pass
+			
+			if evt.type == pygame.JOYAXISMOTION:
+                            print("YEEET")
+			
 
 
 except KeyboardInterrupt:
