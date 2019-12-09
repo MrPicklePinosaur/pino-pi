@@ -21,23 +21,24 @@ try:
         '''
 
         for j in joysticks:
-        	
+
         	print(j.get_numaxes())
         	for axis in range(j.get_numaxes()):
-        		print("Axis #"+axis+": "+j.get_axis(axis)) 
+        		print(f"Axis # {axis}: {j.get_axis(axis)}") 
 
         	for ball in range(j.get_numballs()):
-        		print("Ball #"+ball+": "+j.get_ball(ball)) 
+        		print(f"Ball # {ball}: {j.get_ball(ball)}") 
 
         	for button in range(j.get_numbuttons()):
-        		print("Button #"+button+": "+j.get_button(button)) 
+        		print(f"Button # {button}: {j.get_button(button)}") 
 
         	for hat in range(j.get_numhats()):
-        		print("Hat #"+hat+": "+j.get_hat(hat)) 
+        		print(f"Hat # {hat}: {j.get_hat(hat)}") 
 
         	print("=-=-=-=-=-=-=-=-=")
 
 except KeyboardInterrupt:
 	pass
 finally:
+	print("quit or errored")
 	pygame.quit()
